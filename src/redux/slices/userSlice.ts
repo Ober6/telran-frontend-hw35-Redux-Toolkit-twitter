@@ -34,7 +34,6 @@ const userSlice = createSlice({
         builder.addMatcher(
             randomUserApi.endpoints.getRandomUser.matchFulfilled,
             (state, { payload }) => {
-                // Example assumes API returns an array with results[0].picture.large
                 if (payload?.results?.[0]?.picture?.large) {
                     state.avatar = payload.results[0].picture.large;
                 }
